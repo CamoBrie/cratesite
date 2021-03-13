@@ -30,12 +30,12 @@ const updateHide = function () {
 };
 
 const keyPerS = function () {
-	var x = player.scrapPerS;
-	var txt = '';
+	var x = Math.round(player.scrapPerS / 10);
+	var txt = `|| ${x} ${IDName[0]}${x > 1 ? 's' : ''}/s `;
 	for (var i = 0; i <= player.openall; i++) {
-		var s = Math.floor(x / 100);
-		if (s > 0) {
-			txt += `|| ${s} ${IDName[i]}${s > 1 ? 's' : ''}/s `;
+		var s = x / 100;
+		if (s > 0.1) {
+			txt += `|| ${s} ${IDName[i + 1]}${s > 1 ? 's' : ''}/s `;
 		}
 		x = s;
 	}

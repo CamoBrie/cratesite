@@ -19,7 +19,7 @@ const update = function (delta) {
 };
 
 const render = function () {
-	if (player.openall < 0) {
+	if (player.bools.includes('automatekey') < 0) {
 		document.getElementById('scrapcounter').innerHTML =
 			Math.round(player.scrap) + ': ' + Math.round(player.scrapPerS) + '/s';
 	} else {

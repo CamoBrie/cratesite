@@ -24,10 +24,16 @@ const wipeSave = function () {
 			[
 				{ entries: 20, type: 'scrap', min: 200, max: 350 },
 				{ entries: 5, type: 'keyimprove', min: 0, max: 1 },
-				{ entries: 5, type: 'producer', min: 10, max: 30 },
+				{ entries: 5, type: 'producer', min: 40, max: 70 },
 				{ entries: 4, type: 'dkey', min: 2, max: 2 },
 				{ entries: 1, type: 'nkey', min: 1, max: 1 },
 				{ entries: 1, type: 'bool', min: 1, max: 1, name: 'automatekey' },
+			],
+			[
+				{ entries: 50, type: 'scrap', min: 2000, max: 8000 },
+				{ entries: 20, type: 'producer', min: 200, max: 400 },
+				{ entries: 10, type: 'dkey', min: 2, max: 3 },
+				{ entries: 1, type: 'keyimprove', min: 2, max: 2 },
 			],
 		],
 		lastSave: 0,
@@ -48,7 +54,7 @@ const load = function () {
 	var timediff = Date.now() - loadplayer.lastSave;
 	loadplayer.scrap += Math.round(loadplayer.scrapPerS * (timediff / 1000));
 
-	player = loadplayer;
+	Object.assign(player, loadplayer);
 };
 
 window.onbeforeunload = function () {
