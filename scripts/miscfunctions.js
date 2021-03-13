@@ -28,3 +28,16 @@ const updateHide = function () {
 		document.getElementById(element).style.display = 'none';
 	});
 };
+
+const keyPerS = function () {
+	var x = player.scrapPerS;
+	var txt = '';
+	for (var i = 0; i <= player.openall; i++) {
+		var s = Math.floor(x / 100);
+		if (s > 0) {
+			txt += `|| ${s} ${IDName[i]}${s > 1 ? 's' : ''}/s `;
+		}
+		x = s;
+	}
+	return txt;
+};

@@ -5,6 +5,7 @@ const wipeSave = function () {
 		scrapNeeded: 100,
 		scrapPerS: 0,
 		keys: [0, 0, 0, 0, 0, 0],
+		openall: -1,
 		loottable: [
 			[
 				{ entries: 10, type: 'scrap', min: 15, max: 20 },

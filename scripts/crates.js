@@ -5,6 +5,7 @@ const createKey = function () {
 		openCrate(0);
 	}
 };
+
 const openCrate = function (num) {
 	if (player.keys.length < num || player.keys[num] <= 0) {
 		return;
@@ -98,7 +99,7 @@ const cratefn = {
 		player.loottable[num] = player.loottable[num].filter((el) => el != selected);
 		player.hides.push('opencrate');
 		flags.updateHide = true;
-		lastopened(`Now automatically converts scrap into dirt keys!`);
+		lastopened(`Now automatically converts scrap into gravel keys!`);
 	},
 };
 

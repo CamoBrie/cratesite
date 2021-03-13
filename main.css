@@ -1,10 +1,15 @@
+html {
+	height: 100%;
+}
+
 body {
 	margin: 0;
 	padding: 0;
-	background-color: black;
+	background-image: radial-gradient(circle, black, rgb(32, 32, 32));
 	color: white;
 	text-align: center;
 	overflow-y: hidden;
+
 }
 
 .center {
@@ -29,11 +34,12 @@ button:hover {
 }
 
 #inventory {
-	text-decoration: underline;
+	text-decoration: none;
+	
 }
 
-#inventory:hover {
-	text-decoration: none;
+#inventory div:hover {
+	text-decoration: underline;
 	cursor: pointer;
 }
 
