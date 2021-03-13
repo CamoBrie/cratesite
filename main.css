@@ -1,6 +1,39 @@
 body {
 	margin: 0;
 	padding: 0;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+.center {
+	width: 50%;
+	margin: 0 auto;
+}
+
+button {
+	box-shadow: none;
+	box-sizing: border-box;
+	padding: 5px;
+	transition: 0.3s;
+}
+
+button:hover {
+	background-color: rgb(182, 182, 182);
+	border-radius: 10px;
+}
+
+.wrapper {
+	margin-top: 5%;
+}
+
+#inventory {
+	text-decoration: underline;
+}
+
+#inventory:hover {
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .noselect {

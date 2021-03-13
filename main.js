@@ -45,4 +45,5 @@ const loop = function () {
 
 const gameLoop = setInterval(loop, updatetime);
 load();
+flags.updateInv = true;
 flags.updateHide = true;

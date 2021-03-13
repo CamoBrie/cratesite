@@ -50,7 +50,7 @@ const cratefn = {
 	producer: (selected) => {
 		player.scrapPerS += selected.amount;
 		lastopened(`Got ${selected.amount} scrap per second!`);
-		if (player.scrapPerS > 20 && !player.hides.includes('mainBtn')) {
+		if (player.scrapPerS >= 20 && !player.hides.includes('mainBtn')) {
 			player.hides.push('mainBtn');
 			flags.updateHide = true;
 		}
