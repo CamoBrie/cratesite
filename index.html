@@ -6,16 +6,23 @@
 		<title>Crate Idle</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+		<script src="scripts/variables.js"></script>
+		<script src="scripts/savefiles.js"></script>
+		<script src="scripts/miscfunctions.js"></script>
+		<script src="scripts/inventory.js"></script>
+		<script src="scripts/crates.js"></script>
 		<script src="main.js"></script>
 	</head>
 	<body>
-		<button id="mainBtn" onclick="getScrap()">Search for key scraps.</button>
-		<span id="scrapcounter">0</span>
-		<br />
-		<button id="opencrate.0" onclick="createKey()">
-			Turn scrap into a key and open a crate. (100)
-		</button>
-
-		<div id="inventory"></div>
+		<div id="main">
+			<button id="mainBtn" onclick="getScrap()">Search for key scraps.</button>
+			<span id="scrapcounter">0</span>
+			<button id="opencrate" onclick="createKey()">
+				Turn scrap into a dirt key and open a crate. (100)
+			</button>
+		</div>
+		<div id="inventory" class="noselect"></div>
+		<div id="lastopened"></div>
 	</body>
 </html>
