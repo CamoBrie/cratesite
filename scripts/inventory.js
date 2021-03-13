@@ -9,7 +9,7 @@ const updateInventory = function (e, keys) {
 				openCrate(i);
 			};
 			e.append(KeyInventory[i]);
-		} else if (KeyInventory[i]) {
+		} else if (KeyInventory[i] != null) {
 			KeyInventory[i].style.display = 'block';
 			KeyInventory[i].innerHTML = IDName[i] + ': ' + keys[i];
 			if (player.openall >= i || keys[i] == 0) {
