@@ -9,12 +9,12 @@ const updateInventory = function (e, keys) {
 				openCrate(i);
 			};
 			e.append(KeyInventory[i]);
-		} else if (KeyInventory[i] && (keys[i] == 0 || player.openall >= i)) {
-			KeyInventory[i].style.display = 'none';
-		}
-		if (keys[i] != 0) {
+		} else {
 			KeyInventory[i].style.display = 'block';
 			KeyInventory[i].innerHTML = IDName[i] + ': ' + keys[i];
+			if (player.openall >= i || keys[i] == 0) {
+				KeyInventory[i].style.display = 'none';
+			}
 		}
 
 		if (keys[i] > 10000 && i > player.openall) {
