@@ -11,7 +11,9 @@ const updateInventory = function (e, keys) {
 			e.append(KeyInventory[i]);
 		} else if (KeyInventory[i] && (keys[i] == 0 || player.openall >= i)) {
 			KeyInventory[i].style.display = 'none';
-		} else if (keys[i] != 0) {
+		}
+		if (keys[i] != 0) {
+			KeyInventory[i].style.display = 'block';
 			KeyInventory[i].innerHTML = IDName[i] + ': ' + keys[i];
 		}
 
