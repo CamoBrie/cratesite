@@ -6,30 +6,77 @@
 		<title>Crate Idle</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	</head>
+	<body>
+		<div id="panelSelect"></div>
+		<div class="Panel" data-panelName="Main Screen">
+			<div id="main" class="center">
+				<h2>Scrap:</h2>
+				<button id="mainBtn" onclick="getScrap()">Search for key scraps.</button>
+				<span id="scrapcounter">0</span>
+				<button id="opencrate" onclick="createKey()">
+					Turn scrap into a key and open a crate. (100)
+				</button>
+			</div>
+			<div class="center wrapper noselect">
+				<h2>Inventory:</h2>
+				<div id="inventory"></div>
+			</div>
+			<div class="center wrapper noselect">
+				<h2 id="lastopentitle">Last found:</h2>
+				<div id="lastopened"></div>
+			</div>
+		</div>
+		<div class="Panel" data-panelName="Settings">
+			<h2>Settings:</h2>
+			<div id="slidecontainer">
+				<span id="settings.updatetime" data-txt="Update Time"
+					>Update Time (50)</span
+				>
+				<input
+					type="range"
+					min="10"
+					max="200"
+					value="50"
+					step="10"
+					class="slider"
+					id="updatetime"
+				/>
+				<br />
+				<span id="settings.foundlength" data-txt="Length of things found"
+					>Length of things found (10)</span
+				>
+				<input
+					type="range"
+					min="1"
+					max="15"
+					value="10"
+					class="slider"
+					id="foundlength"
+				/>
+			</div>
+			<br />
+			<div id="selectcontainer">
+				<span id="settings.texthide">Hide in Found</span>
+				<input
+					type="text"
+					placeholder="put in ids of text, with spaces in between"
+					id="texthide"
+					size="34"
+				/>
+				<p class="extra-info">
+					(scrap, reduce, producer, dkey, nkey, keyimprove, bool)
+				</p>
+			</div>
+		</div>
 
+		<!-- Include all the scripts -->
 		<script src="scripts/variables.js"></script>
 		<script src="scripts/savefiles.js"></script>
 		<script src="scripts/miscfunctions.js"></script>
 		<script src="scripts/inventory.js"></script>
 		<script src="scripts/crates.js"></script>
+		<script src="scripts/settings.js"></script>
 		<script src="main.js"></script>
-	</head>
-	<body>
-		<div id="main" class="center">
-			<h2>Scrap:</h2>
-			<button id="mainBtn" onclick="getScrap()">Search for key scraps.</button>
-			<span id="scrapcounter">0</span>
-			<button id="opencrate" onclick="createKey()">
-				Turn scrap into a key and open a crate. (100)
-			</button>
-		</div>
-		<div class="center wrapper noselect">
-			<h2>Inventory:</h2>
-			<div id="inventory"></div>
-		</div>
-		<div class="center wrapper noselect">
-			<h2>Last found:</h2>
-			<div id="lastopened"></div>
-		</div>
 	</body>
 </html>

@@ -10,9 +10,8 @@ const IDName = {
 	8: 'obsidian key',
 	9: 'bedrock key',
 };
-const updatetime = 50;
 
 var flags = {
-	updateInv: false,
-	updateHide: false,
+	updateInv: true,
+	updateHide: true,
 };

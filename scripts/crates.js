@@ -38,7 +38,7 @@ const selectDrop = function (table) {
 const cratefn = {
 	scrap: (selected) => {
 		player.scrap += selected.amount;
-		lastopened(`Got ${selected.amount} scrap!`);
+		lastopened('scrap', `Got ${selected.amount} scrap!`, 'LightSlateGray');
 	},
 	reduce: (selected) => {
 		player.scrapNeeded -= selected.amount;
@@ -46,11 +46,19 @@ const cratefn = {
 			player.scrapNeeded = 10;
 			removeReduce();
 		}
-		lastopened(`Reduced the Scrap need by ${selected.amount} scrap!`);
+		lastopened(
+			'reduce',
+			`Reduced the Scrap need by ${selected.amount} scrap!`,
+			'IndianRed'
+		);
 	},
 	producer: (selected) => {
 		player.scrapPerS += selected.amount;
-		lastopened(`Got ${selected.amount} scrap per second!`);
+		lastopened(
+			'producer',
+			`Got ${selected.amount} scrap per second!`,
+			'LightSteelBlue'
+		);
 		if (player.scrapPerS >= 20 && !player.hides.includes('mainBtn')) {
 			player.hides.push('mainBtn');
 			flags.updateHide = true;
@@ -60,18 +68,22 @@ const cratefn = {
 		player.keys[num] += selected.amount;
 		flags.updateInv = true;
 		lastopened(
+			'dkey',
 			`Got ${selected.amount > 1 ? selected.amount : ''} ${IDName[num]}${
 				selected.amount > 1 ? 's' : ''
-			}!`
+			}!`,
+			'MediumSeaGreen'
 		);
 	},
 	nkey: (selected, num) => {
 		player.keys[num + 1] += selected.amount;
 		flags.updateInv = true;
 		lastopened(
+			'nkey',
 			`Got ${selected.amount > 1 ? selected.amount : ''} ${IDName[num + 1]}${
 				selected.amount > 1 ? 's' : ''
-			}!`
+			}!`,
+			'MediumSpringGreen'
 		);
 	},
 	keyimprove: (selected) => {
@@ -92,14 +104,18 @@ const cratefn = {
 				element.entries++;
 			}
 		});
-		lastopened(`Improved the drop table of the ${IDName[selected.amount]}!`);
+		lastopened(
+			'keyimprove',
+			`Improved the drop table of the ${IDName[selected.amount]}!`,
+			'gold'
+		);
 	},
 	bool: (selected, num) => {
 		player.bools.push(selected.name);
 		player.loottable[num] = player.loottable[num].filter((el) => el != selected);
 		player.hides.push('opencrate');
 		flags.updateHide = true;
-		lastopened(`Now automatically converts scrap into gravel keys!`);
+		lastopened('bool', selected.desc, 'gold');
 	},
 };
 

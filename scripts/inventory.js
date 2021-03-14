@@ -12,7 +12,7 @@ const updateInventory = function (e, keys) {
 		} else if (KeyInventory[i] != null) {
 			KeyInventory[i].style.display = 'block';
 			KeyInventory[i].innerHTML = IDName[i] + ': ' + keys[i];
-			if (player.openall >= i || keys[i] == 0) {
+			if (player.openall > i || keys[i] == 0) {
 				KeyInventory[i].style.display = 'none';
 			}
 		}

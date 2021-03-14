@@ -9,7 +9,6 @@ body {
 	color: white;
 	text-align: center;
 	overflow-y: hidden;
-
 }
 
 .center {
@@ -35,7 +34,6 @@ button:hover {
 
 #inventory {
 	text-decoration: none;
-	
 }
 
 #inventory div:hover {
@@ -49,4 +47,58 @@ button:hover {
 	-moz-user-select: none;
 	-o-user-select: none;
 	user-select: none;
+}
+
+#panelSelect button {
+	background-color: #000000;
+	display: inline-block;
+	padding: 0.35em 1.2em;
+	border: 0.1em solid #ffffff;
+	margin: 0.3em 0.3em 0.3em 0;
+	border-radius: 0.12em;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	color: #ffffff;
+	text-align: center;
+	transition: all 0.2s;
+}
+
+#panelSelect button:hover {
+	color: #000000;
+	background-color: #ffffff;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 10%;
+	height: 20px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	background: #ffffff;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: #ffffff;
+	cursor: pointer;
+}
+
+.extra-info {
+	margin: 0;
+	font-size: 12px;
+	color: gray;
 }
